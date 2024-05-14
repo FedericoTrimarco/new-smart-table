@@ -1,1 +1,244 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$new-smart-table-primary: mat.define-palette(mat.$indigo-palette);
+$new-smart-table-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$new-smart-table-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$new-smart-table-theme: mat.define-light-theme((
+  color: (
+    primary: $new-smart-table-primary,
+    accent: $new-smart-table-accent,
+    warn: $new-smart-table-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($new-smart-table-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+.pointer{
+    cursor: pointer;
+}
+
+.bg-blue-custom{
+  background-color: #009fff;
+  color: #fff;
+}
+
+.bg-green-custom{
+  background-color: #009879;
+  color: #fff;
+}
+
+.bg-orange-custom{
+  background-color: #ffb507;
+  color: #fff;
+}
+
+.styled-table-1 {
+    border-collapse: collapse !important;
+    margin: 25px 0 !important;
+    font-size: 0.9em !important;
+    font-family: sans-serif !important;
+    width: 100% !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    background-color: #fff !important;
+  
+    thead tr {
+        text-align: center !important;
+  
+    }
+  
+    &.typeOne{
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #009879 !important;
+      }
+  
+      thead tr th{
+          background-color: #009879 !important;
+          a, span{
+            color: #fff !important;
+            background-color: transparent !important;
+            text-transform: uppercase !important;
+          }
+      }
+  
+      tbody tr {
+        td{
+          padding: 0 !important;
+        }
+      }
+    }
+  
+    &.typeTwo{
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #0892ce !important;
+      }
+  
+      thead tr th{
+          background-color: #0892ce !important;
+          a, span{
+            color: #fff !important;
+            background-color: transparent !important;
+            text-transform: uppercase !important;
+          }
+      }
+  
+      tbody tr {
+        td{
+          padding: 0 !important;
+        }
+      }
+    }
+  
+    &.typeThree{
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #ffb507 !important;
+      }
+  
+      thead tr th{
+          background-color: #ffb507 !important;
+          a, span{
+            color: #fff !important;
+            background-color: transparent !important;
+            text-transform: uppercase !important;
+          }
+      }
+  
+      tbody tr {
+        td{
+          padding: 0 !important;
+        }
+      }
+    }
+    thead{
+      span{
+        background-color: transparent !important;
+        color: #fff !important;
+      }
+    }
+  
+    thead tr th{
+        padding: 10px !important;
+        color: #fff !important;
+        a{
+          color: #fff !important;
+        }
+  
+        *{
+          span{
+            background-color: transparent !important;
+            color: #fff !important;
+          }
+        }
+    }
+  
+    tbody tr th{
+        padding: 0 !important;
+    }
+  
+    tbody tr {
+        border-bottom: 1px solid #dedede3d !important;
+        text-align: center !important;
+    }
+  
+    tbody tr:nth-of-type(even) {
+        background-color: #dedede3d !important;
+    }
+  
+    &.noButtonOne{
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #009879 !important;
+      }
+  
+      thead tr th{
+        background-color: #009879 !important;
+        a, span{
+          color: #fff !important;
+          background-color: transparent !important;
+          text-transform: uppercase !important;
+        }
+      }
+  
+      tbody tr th{
+        padding: 10px !important;
+        td{
+          padding: 10px !important;
+        }
+      }
+    }
+  
+    &.noButtonTwo{
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #0892ce !important;
+      }
+  
+      thead tr th{
+        background-color: #0892ce !important;
+        a, span{
+          color: #fff !important;
+          background-color: transparent !important;
+          text-transform: uppercase !important;
+        }
+      }
+  
+      tbody tr th{
+        padding: 10px !important;
+        td{
+          padding: 10px !important;
+        }
+      }
+    }
+  
+    &.noButtonThree{
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #ffb507 !important;
+      }
+  
+      thead tr th{
+        background-color: #ffb507 !important;
+        a, span{
+          color: #fff !important;
+          background-color: transparent !important;
+          text-transform: uppercase !important;
+        }
+      }
+  
+      tbody tr th{
+        padding: 10px !important;
+        td{
+          padding: 10px !important;
+        }
+      }
+    }
+  
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

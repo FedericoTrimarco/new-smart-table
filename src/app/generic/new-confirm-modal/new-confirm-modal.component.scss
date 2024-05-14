@@ -1,0 +1,62 @@
+::ng-deep {
+
+#loader-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #c6bcbca3;
+
+    #loader-header {
+        position: relative;
+        width: 100%;
+        // background-image: url(../../../assets/images/texture-dialog-144x20-opacity-08.png);
+        background-repeat: repeat-x;
+        background-size: auto 1.25rem;
+    }
+
+    #loader-bard {
+        
+        background-color: #fff;
+        width: 40%;
+        box-sizing: border-box;
+        box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.28);
+        background: #fff;
+        border: 1px solid #999;
+        border-radius: .375rem;
+
+        h4 {
+            margin-bottom: 20px;
+        }
+    }
+    #loader-content {
+        
+        background-color: #fff;
+        padding: 50px;
+        width: 100%;
+        border-radius: .375rem;
+
+        h4 {
+            margin-bottom: 20px;
+        }
+    }
+
+    ::ng-deep .mat-progress-bar-fill::after {
+        background-color: #000;
+    }
+}
+
+.modal-dialog > .modal-content > .modal-header-unisa {
+    position: relative;
+    width: 100%;
+    // background-image: url(../../../assets/images/texture-dialog-144x20-opacity-08.png) !important;
+    background-repeat: repeat-x;
+    background-size: auto 1.25rem;
+}
+
+
+}

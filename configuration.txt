@@ -1,0 +1,2 @@
+node v. 18.13.0
+angular v. 17.3.1

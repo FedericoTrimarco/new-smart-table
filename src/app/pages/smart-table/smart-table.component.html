@@ -1,0 +1,139 @@
+
+<div class="container mt-5">
+    <div class="mt-5">
+        <a href="https://dj-fiorex.github.io/angular2-smart-table/demo" target="_blank" rel="noopener noreferrer" class="fs-1" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="3000">ANGULAR2-SMART-TABLE</a>
+        
+        <div data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+            <angular2-smart-table [settings]="settings" [source]="data" (userRowSelect)="onUserRowSelect($event)"></angular2-smart-table>
+        </div>
+
+        <div class="d-flex justify-content-end" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+          <button class="btn btn-danger" (click)="deleteAllUserSelected()" [disabled]="selectedRows.length == 0">Elimina utenti selezionati</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #modalModificaDescrizioneProposta let-modalModificaDescrizioneProposta let-c="close" let-d="dismiss">
+  <div class="marcoObSs">
+      <div class="modal-header d-flex flex-row justify-content-between align-items-center p-3 mb-3 bg-green-custom">
+          <div class="title-wrapper">
+              <h5>DETTAGLIO UTENTE</h5>
+          </div>
+      </div>
+      <div class="modal-body container-fluid">
+          <form [formGroup]="form" class="row">
+              <div class="d-flex flex-column col-4">
+                  <label class="text-muted mb-1">Nome</label>
+                  <input type="text" class="form-control" formControlName="name" id="name">
+              </div>
+              <div class="d-flex flex-column col-4">
+                  <label class="text-muted mb-1">username</label>
+                  <input type="text" class="form-control" formControlName="username" id="username">
+              </div>
+              <div class="d-flex flex-column col-4">
+                  <label class="text-muted mb-1">email</label>
+                  <input type="text" class="form-control" formControlName="email" id="email">
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-danger" (click)="modalModificaDescrizioneProposta.dismiss()">Chiudi</button>
+          <button class="btn btn-success" (click)="updateUser(modalModificaDescrizioneProposta)">Modifica Utenza</button>
+      </div>
+  </div>
+</ng-template>
+
+<!-- <div class="box" data-aos="fade-up">fade-up</div>
+<div class="box" data-aos="fade-down">fade-down</div>
+<div class="box" data-aos="fade-right">fade-right</div>
+<div class="box" data-aos="fade-left">fade-left</div>
+<div class="box" data-aos="fade-up-right">fade-up-right</div>
+<div class="box" data-aos="fade-up-left">fade-up-left</div>
+<div class="box" data-aos="fade-down-right">fade-down-right</div>
+<div class="box" data-aos="fade-down-left">fade-down-left</div>
+<div class="box" data-aos="flip-left">flip-left</div>
+<div class="box" data-aos="flip-right">flip-right</div>
+<div class="box" data-aos="flip-up">flip-up</div>
+<div class="box" data-aos="flip-down">flip-down</div>
+<div class="box" data-aos="zoom-in">zoom-in</div>
+<div class="box" data-aos="zoom-in-up">zoom-in-up</div>
+<div class="box" data-aos="zoom-in-down">zoom-in-down</div>
+<div class="box" data-aos="zoom-in-left">zoom-in-left</div>
+<div class="box" data-aos="zoom-in-right">zoom-in-right</div>
+<div class="box" data-aos="zoom-out">zoom-out</div>
+<div class="box" data-aos="zoom-out-up">zoom-out-up</div>
+<div class="box" data-aos="zoom-out-down">zoom-out-down</div>
+<div class="box" data-aos="zoom-out-right">zoom-out-right</div>
+<div class="box" data-aos="zoom-out-left">zoom-out-left</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-duration="3000"
+  >duration 3000
+</div>
+<div class="box" 
+  data-aos="fade-down"
+  data-aos-easing="linear"
+  data-aos-duration="1500"
+  >duration 1500
+</div>
+<div class="box" 
+  data-aos="fade-right"
+  data-aos-offset="300"
+  data-aos-easing="ease-in-sine"
+  >ease-in-sine
+</div>
+<div class="box" 
+  data-aos="fade-left"
+  data-aos-anchor="#example-anchor"
+  data-aos-offset="500"
+  data-aos-duration="500"
+  >
+</div>
+<div class="box" 
+  data-aos="fade-zoom-in"
+  data-aos-easing="ease-in-back"
+  data-aos-delay="300"
+  data-aos-offset="0"
+  >ease-in-back
+</div>
+<div class="box" 
+  data-aos="flip-left"
+  data-aos-easing="ease-out-cubic"
+  data-aos-duration="2000"
+  >ease-out-cubic
+</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-anchor-placement="top-bottom"
+  >fade-up
+</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-anchor-placement="center-bottom"
+  >fade-up-center-bottom 
+</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-anchor-placement="bottom-bottom"
+  >fade-up-bottom-bottom
+</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-anchor-placement="top-center"
+  >
+</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-anchor-placement="center-center"
+  >
+</div>
+<div class="box" 
+  data-aos="fade-up"
+  data-aos-anchor-placement="bottom-center"
+  >
+</div>
+
+<div class="box" data-aos="fade-in" data-aos="fade-up" data-aos-once="true"></div>
+<div data-aos="fade-up" data-aos-once="true">
+  the content
+</div> -->
