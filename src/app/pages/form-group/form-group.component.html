@@ -1,0 +1,26 @@
+
+<div class="container mt-5">
+    <div class="mt-5">
+        <i class="fa-solid fa-arrow-left me-2" (click)="routeTo('main-apps')"></i>
+        <a href="https://angular.io/api/forms/FormGroup" target="_blank" rel="noopener noreferrer" class="fs-1" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="3000">FORM-GROUP</a>
+        
+        <div data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+            <form [formGroup]="form" class="d-flex flex-column mt-3 px-2" id="formPrincipale">
+
+                <input type="text" placeholder="Nome" formControlName="nome" class="form-control my-2">
+                <input type="text" placeholder="Cognome" formControlName="cognome" class="form-control my-2">
+                <input type="number" placeholder="Anni" formControlName="anni" class="form-control my-2" (keypress)="hf.preventLetters($event)">
+                <input type="text" placeholder="Città natale" formControlName="cittaNatale" class="form-control my-2">
+
+                <div class="mt-3 d-flex">
+                    <div class="w-50 pe-2">
+                        <button class="btn btn-primary w-100" (click)="login()">Login</button>
+                    </div>
+                    <div class="w-50 ps-2">
+                        <button class="btn btn-success w-100" (click)="login(true)">Login with message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

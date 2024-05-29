@@ -14,7 +14,6 @@ export class CustomButtonsForTableComponent {
   @Input() buttons: any;
 
   constructor(private router: Router) {
-    console.log('@Input() buttons: >>', this.buttons);
     
   }
 

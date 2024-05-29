@@ -8,12 +8,14 @@ import { CustomButtonsForTableModule } from './generic/custom-buttons-for-table/
 // AOS STEP 1
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FormGroupModule } from './pages/form-group/form-group.module';
+import { HookFunctions } from './generic/hookFunctions';
 //////
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, CustomButtonsForTableModule ,MainAppsModule, SmartTableModule, Angular2SmartTableModule],
+  imports: [CommonModule, RouterOutlet, CustomButtonsForTableModule, MainAppsModule, SmartTableModule, FormGroupModule, Angular2SmartTableModule],
+  providers: [HookFunctions],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
